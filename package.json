@@ -1,0 +1,25 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client.js",
+  "scripts": {
+    "start": "node client.js http://10.10.10.200:443",
+    "start:10": "node client.js http://10.10.10.200:443 --upload-size 10240 --download-size 10240",
+    "upload": "node client.js http://10.10.10.200:443 --no-latency --no-download --upload-size 5120",
+    "download": "node client.js http://10.10.10.200:443 --no-latency --no-upload   --download-size 5120",
+    "latency": "node client.js http://10.10.10.200:443 --no-upload --no-download --ping-count 10"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/bun": "latest"
+  },
+  "private": true,
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
