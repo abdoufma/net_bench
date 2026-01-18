@@ -1,19 +1,19 @@
-const express = require('express');
-const cors = require('cors');
-const crypto = require('crypto');
+import express, { json } from 'express';
+import cors from 'cors';
+import { randomBytes } from 'crypto';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Enable CORS for cross-origin requests
 app.use(cors());
-app.use(express.json({ limit: '50mb' }));
+app.use(json({ limit: '50mb' }));
 
 // Generate test data of specified size (in KB)
 function generateTestData(sizeKB) {
     const sizeBytes = sizeKB * 1024;
     // Generate random data for more realistic network conditions
-    return crypto.randomBytes(sizeBytes).toString('base64');
+    return randomBytes(sizeBytes).toString('base64');
 }
 
 // Ping endpoint for latency testing
@@ -101,4 +101,4 @@ app.listen(PORT, '0.0.0.0', () => {
     console.log(`  GET  /api/health - Health check`);
 });
 
-module.exports = app;
+export default app;

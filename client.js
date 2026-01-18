@@ -1,6 +1,6 @@
-const https = require('https');
-const http = require('http');
-const crypto = require('crypto');
+import https from 'https';
+import http from 'http';
+import { randomBytes } from 'crypto';
 
 class NetworkSpeedTester {
     constructor(serverUrl) {
@@ -77,7 +77,7 @@ class NetworkSpeedTester {
         
         // Generate test data
         const sizeBytes = sizeKB * 1024;
-        const testData = crypto.randomBytes(sizeBytes).toString('base64');
+        const testData = randomBytes(sizeBytes).toString('base64');
         
         const payload = {
             data: testData,
@@ -227,7 +227,7 @@ class NetworkSpeedTester {
 }
 
 // CLI usage
-if (require.main === module) {
+if (import.meta.main === true) {
     const args = process.argv.slice(2);
     
     if (args.length === 0) {
@@ -292,4 +292,4 @@ if (require.main === module) {
         });
 }
 
-module.exports = NetworkSpeedTester;
+export default NetworkSpeedTester;

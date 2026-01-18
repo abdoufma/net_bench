@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "client.js",
+  "type": "module",
   "scripts": {
     "start": "node client.js http://10.10.10.200:443",
     "start:10": "node client.js http://10.10.10.200:443 --upload-size 10240 --download-size 10240",
