@@ -1,5 +1,8 @@
 # Quick Start Guide
 
+## Requirements
+
+- Node.js v22.18.0 or higher
 
 ## Server
 
@@ -38,23 +41,23 @@ node client.js [server-url] [options]
 ### Examples
 
 ```bash
-node client.js http://10.10.10.200:443 --download-size 10240 --upload-size 10240
+node client.js http://10.10.10.200 --download-size 10240 --upload-size 10240
 ```
 
 ```bash
-node client.js http://10.10.10.200:443 --no-download --no-upload --ping-count 10
+node client.js http://10.10.10.200 --no-download --no-upload --ping-count 10
 ```
 
 ```bash
-node client.js http://10.10.10.200:443 --no-latency --no-download --upload-size 5120
+node client.js http://10.10.10.200 --no-latency --no-download --upload-size 5120
 ```
 
 ```bash
-node client.js http://10.10.10.200:443 --no-latency --no-upload --download-size 5120
+node client.js http://10.10.10.200 --no-latency --no-upload --download-size 5120
 ```
 
 ```bash
-node client.js http://10.10.10.200:443 --no-upload --no-download --ping-count 10
+node client.js http://10.10.10.200 --no-upload --no-download --ping-count 10
 ```
 
 
